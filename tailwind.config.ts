@@ -8,7 +8,6 @@ export default {
         DEFAULT: "15px",
         sm: "15px",
         md: "40px",
-        lg: "135px",
       },
     },
     extend: {

@@ -54,42 +54,42 @@
 .workshop-card-container {
 
   width: 100%;
-  padding-left: 15px;
+  margin-left: auto;
   padding-right: 15px;
-
+  padding-left: 15px;
 
   @media (min-width: 640px) {
-    margin-left: auto;
+
     max-width: 640px;
-    padding-left: 15px;
     padding-right: 15px;
 
   }
 
   @media (min-width: 768px) {
-    margin-left: auto;
-    max-width: 768px;
-    padding-right: 83px;
-  }
 
+    max-width: 768px;
+    padding-right: 40px;
+    padding-left: 40px;
+
+  }
 
   @media (min-width: 1024px) {
-    margin-left: auto;
-    max-width: 1024px;
-  }
 
+    max-width: 1024px;
+    padding-left: 0;
+  }
 
   @media (min-width: 1280px) {
-    margin-left: auto;
-    max-width: 1280px;
-  }
 
+    max-width: 1280px;
+
+  }
 
   @media (min-width: 1536px) {
-    margin-left: auto;
-    max-width: 1536px;
-  }
 
+    max-width: 1536px;
+
+  }
 }
 
 .workshop-card-head {
