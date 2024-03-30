@@ -1,95 +1,21 @@
 <template>
   <section class="mb-32 bundle-section">
     <div class="container">
-      <h2 class="text-center mb-14 text-white lg:w-1/2 lg:mx-auto lg:mb-32">Discounted
+      <h2 class="text-center mb-14 text-white lg:w-3/5 lg:mx-auto lg:mb-32">Discounted
         <span class="gradient-text">Corporate Training</span> Bundles
       </h2>
       <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-auto items-center justify-center md:items-stretch">
-        <div v-for="i in 3" class="bundle-card">
-          <div class="flex gap-4 mb-9">
-            <img src="@/assets/images/icons/leaf.svg" alt="">
-            <span class="text-white text-[22px]">Basic</span>
-          </div>
-          <p class="mb-6 text-brand-color">Includes 1 year access to:</p>
-          <ul class="flex flex-col gap-4">
-            <li class="flex items-center justify-between">
-              <div class="flex">
-                <img src="@/assets/images/icons/check.svg" alt="" class="mr-4">
-                <span class="text-light-color text-sm ">Vue.js Crash Course</span>
-              </div>
-              <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
-            </li>
-            <li class="flex items-center justify-between">
-              <div class="flex">
-                <img src="@/assets/images/icons/check.svg" alt="" class="mr-4">
-                <span class="text-light-color text-sm ">Vue.js Crash Course</span>
-              </div>
-              <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
-            </li>
-            <li class="flex items-center justify-between opacity-20">
-              <div class="flex">
-                <img src="@/assets/images/icons/cancel-green.svg" alt="" class="mr-4">
-                <span class="text-light-color text-sm ">Vue.js Crash Course</span>
-              </div>
-              <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
-            </li>
-          </ul>
-
-          <div class="my-6 bg-brand-color bg-opacity-20 rounded-[10px] py-4 px-6 flex gap-4">
-            <img src="@/assets/images/course-thumbnail.svg" alt="">
-            <div class="flex flex-col">
-              <span class="text-gray-color font-medium text-sm">Enough time to watch:</span>
-              <span class="text-white font-medium text-lg">The Vue 3 Masterclass</span>
-            </div>
-          </div>
-
-          <div class="calculation-card mt-6 mb-8">
-            <div class="flex items-center gap-2.5 mb-6">
-              <span class="font-bold text-[40px] text-white">$50</span>
-              <span class="text-gray-color">/ seat / month</span>
-            </div>
-            <p class="text-white font-bold mb-3">How many licenses do you need?</p>
-            <input id="default-range" type="range" v-model="range"
-              class="w-full h-1 bg-brand-color accent-brand-color rounded-lg appearance-none cursor-pointer" max="20">
-            <div class="flex items-center justify-between mb-4">
-              <span class="font-medium text-sm text-gray-color">0</span>
-              <span class="font-medium text-sm text-gray-color">20</span>
-            </div>
-            <div class="flex items-center gap-5">
-              <div class="bg-[#0E0E10] bg-opacity-20 rounded-lg px-3.5 py-1 flex gap-2.5 items-center">
-                <img src="@/assets/images/icons/people.svg" alt="">
-                <span class="text-[#E8E6E6] font-bold text-[26px]">{{ range }}</span>
-                <span class="text-[#979FAD]">seats</span>
-              </div>
-              <span class="text-brand-color font-medium whitespace-nowrap">{{ (range * (20) / 12).toFixed(0) }}%
-                discount</span>
-            </div>
-          </div>
-          <BaseButton class="w-full text-center">Start Learning</BaseButton>
-          <a href="#" class="mt-6 text-brand-color font-medium flex items-center justify-center">Refer your manager</a>
-        </div>
+        <PricingCard v-for="i in 3" :key="i" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const range = ref(12);
+
 </script>
 
 <style scoped>
-.bundle-card {
-  @apply bg-dark-color px-6 py-10 bg-opacity-90 rounded-[30px] border border-solid;
-
-  border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
-
-
-}
-
-.calculation-card {
-  @apply bg-primary-color rounded-2xl px-4 py-6;
-}
-
 .gradient-text {
   background: #0CD890;
   background: linear-gradient(to bottom, #0CD890 0%, #01F0FD 100%);
@@ -98,7 +24,6 @@ const range = ref(12);
 }
 
 .bundle-section {
-
   background: url('@/assets/images/bundle-bg-sm.svg') no-repeat;
   background-size: 100%;
   background-blend-mode: overlay !important;
