@@ -3,11 +3,11 @@ export default {
   content: ["./components/**/*/*.{js,vue,ts}", "./pages/**/*/*.vue"],
   theme: {
     container: {
-      // center: true,
+      center: true,
       padding: {
         DEFAULT: "15px",
         sm: "15px",
-        md: "83px",
+        md: "40px",
         lg: "135px",
       },
     },
