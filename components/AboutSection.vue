@@ -1,6 +1,6 @@
 <template>
-  <section class="about-section">
-    <div class="container">
+  <section class="about-section container">
+    <div class="">
       <div class="about-card">
         <img src="@/assets/images/logo-alone.svg" alt="VueSchool Logo" class="w-20 md:w-36 lg:w-72">
         <div>
