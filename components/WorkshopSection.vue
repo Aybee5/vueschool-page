@@ -1,7 +1,7 @@
 <template>
   <section class="mb-28">
     <div class="flex flex-col">
-      <div class="flex items-center justify-between lg:mb-16 container">
+      <div class="flex items-center justify-between lg:mb-16 container gap-1">
         <h2 class="text-white text-center mb-14 lg:mb-0 md:text-left">Available Workshops</h2>
         <BaseButton class="hidden lg:flex w-60  items-center text-center justify-center whitespace-nowrap">See all the
           workshops
