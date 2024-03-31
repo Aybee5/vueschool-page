@@ -30,7 +30,7 @@
         <span class="text-gray-color">/ seat / month</span>
       </div>
       <p class="text-white font-bold mb-3">How many licenses do you need?</p>
-      <input id="default-range" type="range" v-model="range"
+      <input :id="`default-range-${priceInfo?.title}`" type="range" v-model="range"
         class="w-full h-1 bg-brand-color accent-brand-color rounded-lg appearance-none cursor-pointer" max="20">
       <div class="flex items-center justify-between mb-4">
         <span class="font-medium text-sm text-gray-color">0</span>
