@@ -63,6 +63,15 @@ const bundleContent = computed(() => {
     })
   return bundleContent
 })
+
+defineOgImageComponent('NuxtSEO', {
+  title: 'VueSchool - Training Solutions',
+  description: `Training solutions designed for companies,
+   agencies and organizations with developers using or 
+   who are considering using the Vue.js framework`,
+  theme: '#212435',
+  colorMode: 'dark',
+})
 </script>
 
 <style scoped>
