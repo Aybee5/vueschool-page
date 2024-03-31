@@ -8,7 +8,7 @@
         </BaseButton>
 
       </div>
-      <div class="flex items-center overflow-auto  mb-10 gap-2 lg:gap-7 workshop-card-container">
+      <div class="flex items-center overflow-auto  mb-10 gap-2 md:gap-7 workshop-card-container">
         <div class="min-w-[335px] md:min-w-[570px] mb-5" v-for="i in 4" :key="i">
           <div class="flex gap-3 items-center workshop-card-head">
             <img src="@/assets/images/icons/calender.svg" alt="">
