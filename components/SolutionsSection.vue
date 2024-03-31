@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <div class="my-[120px] flex flex-col lg:flex-row">
+    <div class="my-[120px] flex flex-col lg:flex-row gap-8 lg:gap-20">
       <div class="flex flex-col items-center lg:items-start lg:gap-8">
         <p class="text-center gradient-text font-medium">YOUR #1 SOURCE OF VUE.JS COURSES</p>
         <h2 class="text-white text-center lg:text-left">Full Stack <span class="gradient-text">

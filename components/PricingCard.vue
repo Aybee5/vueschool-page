@@ -2,7 +2,7 @@
   <div class="bundle-card">
     <div class="flex gap-4 mb-9">
       <img :src="`/pricing/${priceInfo?.icon}.svg`" :alt="priceInfo?.title">
-      <span class="text-white text-[22px]">{{ priceInfo?.title }}</span>
+      <span class="text-white text-[22px] font-bold">{{ priceInfo?.title }}</span>
     </div>
     <p class="mb-6 text-brand-color">Includes 1 year access to:</p>
     <ul class="flex flex-col gap-4">
