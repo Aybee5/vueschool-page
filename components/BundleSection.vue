@@ -5,14 +5,16 @@
         <span class="gradient-text">Corporate Training</span> Bundles
       </h2>
       <div class="flex flex-col lg:flex-row gap-6 lg:gap-8 overflow-auto items-center justify-center md:items-stretch">
-        <PricingCard v-for="i in 3" :key="i" />
+        <PricingCard v-for="(priceInfo, i) in content" :priceInfo="priceInfo" :key="i" />
       </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
-
+defineProps({
+  content: Object
+})
 </script>
 
 <style scoped>

@@ -1,35 +1,22 @@
 <template>
   <div class="bundle-card">
     <div class="flex gap-4 mb-9">
-      <img src="@/assets/images/icons/leaf.svg" alt="">
-      <span class="text-white text-[22px]">Basic</span>
+      <img :src="`/pricing/${priceInfo?.icon}.svg`" :alt="priceInfo?.title">
+      <span class="text-white text-[22px]">{{ priceInfo?.title }}</span>
     </div>
     <p class="mb-6 text-brand-color">Includes 1 year access to:</p>
     <ul class="flex flex-col gap-4">
-      <li class="flex items-center justify-between">
+      <li v-for="feature in priceInfo?.features" :key="feature._key" class="flex items-center justify-between gap-1.5"
+        :class="{ 'opacity-20': feature.isDisabled, 'font-bold': feature.isExclusive }">
         <div class="flex">
-          <img src="@/assets/images/icons/check.svg" alt="" class="mr-4">
-          <span class="text-light-color text-sm ">Vue.js Crash Course</span>
+          <img :src="`/icons/${feature.isDisabled ? 'cancel-green' : 'check'}.svg`" alt="" class="mr-4">
+          <span class="text-light-color text-sm ">{{ feature.featureTitle }}</span>
         </div>
-        <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
-      </li>
-      <li class="flex items-center justify-between">
-        <div class="flex">
-          <img src="@/assets/images/icons/check.svg" alt="" class="mr-4">
-          <span class="text-light-color text-sm ">Vue.js Crash Course</span>
-        </div>
-        <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
-      </li>
-      <li class="flex items-center justify-between opacity-20">
-        <div class="flex">
-          <img src="@/assets/images/icons/cancel-green.svg" alt="" class="mr-4">
-          <span class="text-light-color text-sm ">Vue.js Crash Course</span>
-        </div>
-        <img src="@/assets/images/icons/info.svg" alt="" class="object-right">
+        <img v-if="!feature.isDisabled" src="/icons/info.svg" alt="" class="object-right">
       </li>
     </ul>
 
-    <div class="my-6 bg-brand-color bg-opacity-20 rounded-[10px] py-4 px-6 flex gap-4">
+    <div v-if="priceInfo?.hasInfo" class="my-6 bg-brand-color bg-opacity-20 rounded-[10px] py-4 px-6 flex gap-4">
       <img src="@/assets/images/course-thumbnail.svg" alt="">
       <div class="flex flex-col">
         <span class="text-gray-color font-medium text-sm">Enough time to watch:</span>
@@ -65,12 +52,15 @@
 </template>
 
 <script setup lang="ts">
+defineProps({
+  priceInfo: Object
+})
 const range = ref(12);
 </script>
 
 <style scoped>
 .bundle-card {
-  @apply bg-dark-color px-6 py-10 bg-opacity-90 rounded-[30px] border border-solid;
+  @apply bg-dark-color px-6 py-10 bg-opacity-90 rounded-[30px] border border-solid lg:self-start;
   border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
